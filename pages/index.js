@@ -383,7 +383,7 @@ export default function Home() {
       {/* PROOF BANNER */}
       <div className="proof-banner">
         <div className="proof-banner-inner">
-          {['Om Aircon, Delhi — Live on Zeno', '9 Technicians Onboarded in 2 Weeks', '14 Tools Tracked in Real-time', 'AMC Contracts Automated'].map((item, i) => (
+          {['Om Aircon, Dehradun — Live on Zeno', '11 Technicians Onboarded in 2 Weeks', '75+ Tools & Assets Tracked Live', 'AMC Contracts Automated'].map((item, i) => (
             <div className="proof-item" key={i}>
               <div className="proof-dot"></div>
               {item}
@@ -397,7 +397,7 @@ export default function Home() {
         <div className="container">
           <div className="section-label">Real Customer Story</div>
           <h2 className="section-title">Om Aircon went from WhatsApp chaos<br />to full operational control</h2>
-          <p className="section-sub">Delhi-based HVAC service company with 9 technicians, multiple sites, and 100+ AMC clients — now running entirely on Zeno.</p>
+          <<p className="section-sub">Dehradun-based HVAC service company with 11 technicians, multiple sites, and AMC clients — now running entirely on Zeno.</p>
           <div className="case-card">
             <div className="case-left">
               <div className="case-company">Om Aircon • Delhi NCR</div>
@@ -409,7 +409,7 @@ export default function Home() {
             </div>
             <div className="case-right">
               <div className="case-metrics">
-                {[['9','Technicians on Zeno'],['14','Tools tracked live'],['2 weeks','Full onboarding'],['100%','Jobs tracked']].map(([num, label]) => (
+                {[['11','Technicians on Zeno'],['75+','Tools & assets live'],['2 weeks','Full onboarding'],['100%','Jobs tracked']].map(([num, label]) => (
                   <div className="case-metric" key={label}>
                     <div className="case-metric-num">{num}</div>
                     <div className="case-metric-label">{label}</div>
