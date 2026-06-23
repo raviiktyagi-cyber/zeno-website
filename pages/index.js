@@ -28,8 +28,8 @@ export default function Home() {
       });
     } catch (err) { console.error(err); }
     setSubmitted(true);
-    const msg = encodeURIComponent(`Hi, I want to book a demo for Zeno ERP.\n\nName: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}${form.ref ? `\nRef: ${form.ref}` : ''}`);
-    setTimeout(() => window.open(`https://wa.me/919654597330?text=${msg}`, '_blank'), 800);
+    const adminMsg = encodeURIComponent(`🔔 NEW DEMO REQUEST\n\nName: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}${form.ref ? `\nRef: ${form.ref}` : ''}\n\nSource: zenotech.app`);
+window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
   };
 
   const plans = [
