@@ -561,17 +561,17 @@ export default function Home() {
               <div className={`toggle-knob${annual?' on':''}`}></div>
             </button>
             <span className={`toggle-label${annual?' active':''}`}>Annual</span>
-            <span className="annual-badge">2 months free</span>
+            <span className="annual-badge">1 month free</span>
           </div>
           <div className="plans-grid">
             {plans.map(plan => {
-              const price = annual ? Math.round(plan.price * 10 / 12) : plan.price;
+              const price = annual ? plan.price : Math.round(plan.price * 1.2);
               return (
                 <div key={plan.id} className={`plan-card${plan.id === 'growth' ? ' popular' : ''}`}>
                   {plan.tag && <div className="plan-tag">{plan.tag}</div>}
                   <div className="plan-name">{plan.name}</div>
                   <div className="plan-price">₹{price.toLocaleString('en-IN')}<span>/month</span></div>
-                  <div className="plan-users">{plan.users} {annual ? '• billed annually' : '• billed monthly'}</div>
+                  <div className="plan-users">{plan.users} {annual ? '• billed annually (1 month free)' : '• billed monthly'}</div>
                   <ul className="plan-features">
                     {plan.features.map(f => (
                       <li key={f} className={f.startsWith('Everything') ? 'highlight' : ''}>{f}</li>
