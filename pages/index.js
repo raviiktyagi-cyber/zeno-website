@@ -8,7 +8,7 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', company: '', phone: '', ref: '' });
   const [activePlan, setActivePlan] = useState('growth');
-  const [annual, setAnnual] = useState(false);
+  const [annual, setAnnual] = useState(true);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
