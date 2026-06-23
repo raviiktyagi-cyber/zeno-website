@@ -400,7 +400,7 @@ export default function Home() {
           <<p className="section-sub">Dehradun-based HVAC service company with 11 technicians, multiple sites, and AMC clients — now running entirely on Zeno.</p>
           <div className="case-card">
             <div className="case-left">
-              <div className="case-company">Om Aircon • Delhi NCR</div>
+              <div className="case-company">Om Aircon • Dehradun</div>
               <p className="case-quote">"Pehle sab WhatsApp pe hota tha — kaunsa tech kahan hai, kaunsa tool kiske paas hai, kab invoice bhejna hai. Ab sab ek jagah dikh ta hai."</p>
               <p className="case-author">
                 <strong>Amit Rathore</strong>
