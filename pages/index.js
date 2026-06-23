@@ -397,7 +397,7 @@ export default function Home() {
         <div className="container">
           <div className="section-label">Real Customer Story</div>
           <h2 className="section-title">Om Aircon went from WhatsApp chaos<br />to full operational control</h2>
-          <<p className="section-sub">Dehradun-based HVAC service company with 11 technicians, multiple sites, and AMC clients — now running entirely on Zeno.</p>
+          <p className="section-sub">Dehradun-based HVAC service company with 11 technicians, multiple sites, and AMC clients — now running entirely on Zeno.</p>
           <div className="case-card">
             <div className="case-left">
               <div className="case-company">Om Aircon • Dehradun</div>
