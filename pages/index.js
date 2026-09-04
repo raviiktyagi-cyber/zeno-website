@@ -383,7 +383,7 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
       {/* PROOF BANNER */}
       <div className="proof-banner">
         <div className="proof-banner-inner">
-          {['Om Aircon, Dehradun — Live on Zeno', '11 Technicians Onboarded in 2 Weeks', '75+ Tools & Assets Tracked Live', 'AMC Contracts Automated'].map((item, i) => (
+          {['Built for Real HVAC Field Operations', 'Live Tool & Asset Tracking', 'Service, AMC & Inventory — One Platform', 'Trusted by HVAC Contractors'].map((item, i) => (
             <div className="proof-item" key={i}>
               <div className="proof-dot"></div>
               {item}
@@ -392,32 +392,12 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
         </div>
       </div>
 
-      {/* CASE STUDY */}
+      {/* CASE STUDY - PLACEHOLDER (pending customer permission) */}
       <section className="case-study">
-        <div className="container">
-          <div className="section-label">Real Customer Story</div>
-          <h2 className="section-title">Om Aircon went from WhatsApp chaos<br />to full operational control</h2>
-          <p className="section-sub">Dehradun-based HVAC service company with 11 technicians, multiple sites, and AMC clients — now running entirely on Zeno.</p>
-          <div className="case-card">
-            <div className="case-left">
-              <div className="case-company">Om Aircon • Dehradun</div>
-              <p className="case-quote">"Pehle sab WhatsApp pe hota tha — kaunsa tech kahan hai, kaunsa tool kiske paas hai, kab invoice bhejna hai. Ab sab ek jagah dikh ta hai."</p>
-              <p className="case-author">
-                <strong>Amit Rathore</strong>
-                Owner, Om Aircon
-              </p>
-            </div>
-            <div className="case-right">
-              <div className="case-metrics">
-                {[['11','Technicians on Zeno'],['75+','Tools & assets live'],['2 weeks','Full onboarding'],['100%','Jobs tracked']].map(([num, label]) => (
-                  <div className="case-metric" key={label}>
-                    <div className="case-metric-num">{num}</div>
-                    <div className="case-metric-label">{label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="container" style={{textAlign:'center'}}>
+          <div className="section-label">Customer Success</div>
+          <h2 className="section-title">Real HVAC companies,<br />real operational control</h2>
+          <p className="section-sub" style={{margin:'0 auto'}}>Customer stories are being finalized with permission from our early partners. Book a demo to see ZENO in action today.</p>
         </div>
       </section>
 
@@ -549,44 +529,12 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
 
       {/* PRICING */}
       <section id="pricing" className="pricing">
-        <div className="container">
-          <div style={{textAlign:'center'}}>
-            <div className="section-label" style={{textAlign:'center'}}>Pricing</div>
-            <h2 className="section-title">Simple pricing.<br />No hidden charges.</h2>
-            <p className="section-sub" style={{margin:'0 auto 2rem'}}>One flat price per company — not per user. Scale your team without scaling your bill.</p>
-          </div>
-          <div className="pricing-toggle">
-            <span className={`toggle-label${!annual?' active':''}`}>Monthly</span>
-            <button className={`toggle-switch${annual?' on':''}`} onClick={() => setAnnual(!annual)}>
-              <div className={`toggle-knob${annual?' on':''}`}></div>
-            </button>
-            <span className={`toggle-label${annual?' active':''}`}>Annual</span>
-            <span className="annual-badge">1 month free</span>
-          </div>
-          <div className="plans-grid">
-            {plans.map(plan => {
-              const price = annual ? plan.price : Math.round(plan.price * 1.2);
-              return (
-                <div key={plan.id} className={`plan-card${plan.id === 'growth' ? ' popular' : ''}`}>
-                  {plan.tag && <div className="plan-tag">{plan.tag}</div>}
-                  <div className="plan-name">{plan.name}</div>
-                  <div className="plan-price">₹{price.toLocaleString('en-IN')}<span>/month</span></div>
-                  <div className="plan-users">{plan.users} {annual ? '• billed annually (1 month free)' : '• billed monthly'}</div>
-                  <ul className="plan-features">
-                    {plan.features.map(f => (
-                      <li key={f} className={f.startsWith('Everything') ? 'highlight' : ''}>{f}</li>
-                    ))}
-                  </ul>
-                  <a href="#demo">
-                    <button className={`plan-cta${plan.id === 'growth' ? ' primary' : ' secondary'}`}>
-                      {plan.cta}
-                    </button>
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-          <p className="pricing-note">All plans include free onboarding, free setup, and 14-day free trial. No credit card required to start.</p>
+        <div className="container" style={{textAlign:'center'}}>
+          <div className="section-label" style={{textAlign:'center'}}>Pricing</div>
+          <h2 className="section-title">Pricing built around<br />your actual scale</h2>
+          <p className="section-sub" style={{margin:'0 auto 2rem'}}>Every HVAC business runs differently — number of sites, machines, and team size all shape what you need. We scope your setup on a quick call and give you a straightforward quote, no guesswork.</p>
+          <a href="#demo" className="btn-primary" style={{display:'inline-flex'}}>Get a Custom Quote →</a>
+          <p className="pricing-note" style={{marginTop:'1.5rem'}}>No hidden charges. Free onboarding. 14-day free trial before you commit.</p>
         </div>
       </section>
 
