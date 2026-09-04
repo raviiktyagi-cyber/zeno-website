@@ -55,7 +55,7 @@ export default function BookDemo() {
     } catch (err) { console.error(err); }
 
     const adminMsg = encodeURIComponent(
-      `🔔 NEW DEMO REQUEST (Book Demo page)\n\nName: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nEmail: ${form.email || '-'}\nCity: ${form.city || '-'}\nIndustry: ${form.industry || '-'}\nTeam Size: ${form.teamSize || '-'}\nCurrent System: ${form.currentSystem || '-'}\nProblem: ${form.problem || '-'}${form.ref ? `\nRef: ${form.ref}` : ''}\n\nSource: zenotech.app/book-demo`
+      `NEW DEMO REQUEST (Book Demo page)\n\nName: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nEmail: ${form.email || '-'}\nCity: ${form.city || '-'}\nIndustry: ${form.industry || '-'}\nTeam Size: ${form.teamSize || '-'}\nCurrent System: ${form.currentSystem || '-'}\nProblem: ${form.problem || '-'}${form.ref ? `\nRef: ${form.ref}` : ''}\n\nSource: zenotech.app/book-demo`
     );
     window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
     setSubmitting(false);
