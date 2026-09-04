@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { db } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { captureUTM, getStoredUTM } from '../lib/tracking';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -11,6 +12,7 @@ export default function Home() {
   const [annual, setAnnual] = useState(true);
 
   useEffect(() => {
+    captureUTM();
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const ref = params.get('ref');
@@ -24,7 +26,8 @@ export default function Home() {
     try {
       await addDoc(collection(db, 'website_leads'), {
         name: form.name, company: form.company, phone: form.phone,
-        ref_code: form.ref || '', status: 'new', created_at: serverTimestamp(),
+        ref_code: form.ref || '', status: 'new', source: 'homepage-inline',
+        created_at: serverTimestamp(), ...getStoredUTM(),
       });
     } catch (err) { console.error(err); }
     setSubmitted(true);
@@ -354,7 +357,7 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#affiliate">Affiliate</a></li>
-          <li><a href="#demo" className="nav-cta">Book Free Demo</a></li>
+          <li><a href="/book-demo" className="nav-cta">Book Free Demo</a></li>
         </ul>
       </nav>
 
@@ -365,7 +368,7 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
           <h1>The HVAC<br /><span>Operating System</span></h1>
           <p className="hero-sub">Live tool tracking. Site machine mapping. AMC automation. Inventory control. Billing. Everything your HVAC company needs — in one platform built from the ground up for field service.</p>
           <div className="hero-cta-group">
-            <a href="#demo" className="btn-primary">Start Free 14-Day Trial →</a>
+            <a href="/book-demo" className="btn-primary">Start Free 14-Day Trial →</a>
             <a href="#features" className="btn-secondary">See All Features</a>
           </div>
           <p className="hero-trial-note">No credit card required • Setup in 48 hours • Cancel anytime</p>
@@ -533,7 +536,7 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
           <div className="section-label" style={{textAlign:'center'}}>Pricing</div>
           <h2 className="section-title">Pricing built around<br />your actual scale</h2>
           <p className="section-sub" style={{margin:'0 auto 2rem'}}>Every HVAC business runs differently — number of sites, machines, and team size all shape what you need. We scope your setup on a quick call and give you a straightforward quote, no guesswork.</p>
-          <a href="#demo" className="btn-primary" style={{display:'inline-flex'}}>Get a Custom Quote →</a>
+          <a href="/book-demo" className="btn-primary" style={{display:'inline-flex'}}>Get a Custom Quote →</a>
           <p className="pricing-note" style={{marginTop:'1.5rem'}}>No hidden charges. Free onboarding. 14-day free trial before you commit.</p>
         </div>
       </section>
@@ -656,7 +659,7 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
           <span className="nav-logo-text">ZENO</span>
         </div>
         <div className="footer-links">
-          {[['#features','Features'],['#tracking','Live Tracking'],['#machines','Equipment'],['#pricing','Pricing'],['#faq','FAQ'],['#affiliate','Affiliate'],['#demo','Book Demo'],['/terms','Terms']].map(([href,label]) => (
+          {[['#features','Features'],['#tracking','Live Tracking'],['#machines','Equipment'],['#pricing','Pricing'],['#faq','FAQ'],['#affiliate','Affiliate'],['/book-demo','Book Demo'],['/terms','Terms']].map(([href,label]) => (
             <a href={href} key={label}>{label}</a>
           ))}
         </div>
