@@ -342,7 +342,7 @@ window.open(`https://wa.me/919654597330?text=${adminMsg}`, '_blank');
         <meta property="og:description" content="Live tool tracking, site machine mapping, defective item control, AMC management and billing — purpose-built for HVAC." />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
-      <style>{css}</style>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
 
       {/* NAV */}
       <nav>

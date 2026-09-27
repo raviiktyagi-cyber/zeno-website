@@ -18,7 +18,7 @@ export default function ThankYou() {
         <title>You're In! — Zeno Demo Booked</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <style>{css}</style>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
       <section className="ty-page">
         <div className="ty-card">
           <div className="ty-icon">✅</div>
